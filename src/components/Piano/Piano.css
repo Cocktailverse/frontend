@@ -1,0 +1,87 @@
+.piano-container {
+  margin: 2rem auto;
+  text-align: center;
+  max-width: 800px;
+  padding: 1rem;
+}
+
+.piano {
+  display: inline-flex;
+  position: relative;
+  margin: 2rem auto;
+  background: var(--card);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.piano-key {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 1rem;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.1s;
+}
+
+.piano-key.natural {
+  width: 50px;
+  height: 180px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 0 0 5px 5px;
+  z-index: 1;
+}
+
+.piano-key.sharp {
+  width: 30px;
+  height: 120px;
+  background: #333;
+  margin: 0 -15px;
+  z-index: 2;
+  color: white;
+}
+
+.piano-key.active {
+  background: var(--primary);
+}
+
+.piano-key.sharp.active {
+  background: var(--primary);
+}
+
+.key-label {
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+
+.piano-key.sharp .key-label {
+  color: white;
+}
+
+.piano-instructions {
+  margin-top: 2rem;
+  color: var(--muted-foreground);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .piano-key.natural {
+    width: 40px;
+    height: 150px;
+  }
+
+  .piano-key.sharp {
+    width: 25px;
+    height: 100px;
+    margin: 0 -12px;
+  }
+
+  .key-label {
+    font-size: 0.7rem;
+  }
+}

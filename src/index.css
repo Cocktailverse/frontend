@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  --background: #faf3ec;
+  --surface: rgba(255, 255, 255, 0.87);
+  --foreground: #1d1610;
+  --muted-foreground: #6b5c55;
+  --primary: #ff7a18;
+  --primary-dark: #e8630a;
+  --primary-foreground: #ffffff;
+  --accent: #ffcd3c;
+  --border: rgba(0, 0, 0, 0.08);
+  --card: rgba(255, 255, 255, 0.92);
+  --card-foreground: #1d1610;
+  --input-background: rgba(255, 255, 255, 0.92);
+  --radius-lg: 20px;
+  --font-weight-bold: 700;
+  --font-weight-semibold: 600;
+  --shadow-soft: 0 20px 60px rgba(15, 23, 42, 0.08);
+  --gradient: radial-gradient(circle at top, rgba(255, 161, 94, 0.35), transparent 50%),
+    radial-gradient(circle at 20% 20%, rgba(255, 205, 60, 0.3), transparent 45%),
+    radial-gradient(circle at 80% 0%, rgba(255, 122, 24, 0.4), transparent 40%);
+}
+
+body {
+  font-family: 'Space Grotesk', 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--background);
+  background-image: var(--gradient);
+  color: var(--foreground);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
+  position: relative;
+}
+
+body.dark-mode {
+  --background: #050505;
+  --surface: rgba(15, 15, 15, 0.85);
+  --foreground: #FFFFFF;
+  --muted-foreground: #B6B6B6;
+  --card: rgba(12, 12, 12, 0.82);
+  --card-foreground: #FFFFFF;
+  --input-background: rgba(26, 26, 26, 0.9);
+  --border: rgba(255, 255, 255, 0.08);
+  --primary: #ffb347;
+  --primary-dark: #ff9800;
+  --shadow-soft: 0 20px 60px rgba(0, 0, 0, 0.45);
+  --gradient: radial-gradient(circle at top, rgba(255, 153, 0, 0.35), transparent 45%),
+    radial-gradient(circle at 10% 10%, rgba(255, 205, 60, 0.25), transparent 45%),
+    radial-gradient(circle at 90% 0%, rgba(255, 99, 71, 0.35), transparent 45%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+/* Mejoras para móviles */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(255, 122, 24, 0.25);
+  color: inherit;
+}
+
+.glass-panel {
+  background: var(--card);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(18px);
+  box-shadow: var(--shadow-soft);
+}
+
+.gradient-title {
+  background: linear-gradient(120deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--foreground);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+button,
+.btn,
+.feature-button {
+  font-family: inherit;
+  border-radius: 999px;
+  border: none;
+  padding: 0.85rem 1.8rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  background: linear-gradient(120deg, var(--primary), var(--primary-dark));
+  color: var(--primary-foreground);
+  box-shadow: 0 15px 35px rgba(255, 122, 24, 0.2);
+}
+
+button:hover,
+.btn:hover,
+.feature-button:hover {
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 20px 40px rgba(255, 122, 24, 0.25);
+}
+
+button:disabled,
+.btn:disabled,
+.feature-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Evitar zoom en inputs en iOS */
+@media screen and (max-width: 768px) {
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="url"],
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
+}
+
+/* Mejorar el tap target en móviles */
+@media (hover: none) and (pointer: coarse) {
+  button,
+  a,
+  input[type="button"],
+  input[type="submit"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Scroll suave */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Prevenir selección de texto no deseada en móviles */
+button,
+.no-select {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}

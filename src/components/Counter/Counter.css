@@ -1,0 +1,117 @@
+.counter-container {
+  background-color: var(--card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 24px;
+  text-align: center;
+  max-width: 520px;
+  margin: 24px auto;
+  color: var(--card-foreground);
+}
+
+.counter-heading {
+  font-size: 1.4rem;
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: 8px;
+  color: var(--foreground);
+}
+
+.counter-value {
+  font-size: 1.75rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--primary);
+  margin-bottom: 16px;
+}
+
+.counter-button {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  border: none;
+  border-radius: 999px;
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.counter-button:hover,
+.counter-button:focus,
+.counter-button:focus-visible {
+  background-color: #E67E22;
+  box-shadow: 0 4px 14px rgba(211, 84, 0, 0.25);
+  outline: none;
+}
+
+.counter-empty {
+  margin-top: 16px;
+  color: var(--muted-foreground);
+  font-size: 0.95rem;
+}
+
+.counter-card {
+  margin-top: 24px;
+  background-color: var(--card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  text-align: left;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.counter-card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.counter-card-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.counter-card-title {
+  font-size: 1.4rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--foreground);
+  margin: 0;
+}
+
+.counter-card-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--muted-foreground);
+  margin: 0;
+}
+
+.counter-card-tags {
+  font-size: 0.95rem;
+  color: var(--muted-foreground);
+  margin: 0;
+}
+
+.counter-card-action {
+  align-self: flex-start;
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  border: none;
+  border-radius: var(--radius-lg);
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.counter-card-action:hover,
+.counter-card-action:focus,
+.counter-card-action:focus-visible {
+  background-color: #E67E22;
+  box-shadow: 0 4px 12px rgba(211, 84, 0, 0.2);
+  outline: none;
+}
